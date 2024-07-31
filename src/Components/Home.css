@@ -92,6 +92,6 @@
         flex-direction: column;
         width: 100vw;
         height: 100vh;
-        margin-top: 16px; /* Replace with mt-4 */
+        margin-top: 16px; 
     }
 }

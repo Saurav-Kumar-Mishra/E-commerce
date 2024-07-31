@@ -26,24 +26,24 @@
     height: 10px;
     border-radius: 9999px;
 }
-.skeleton.text{
-  width: 100%;
-  margin-top: 10px;
-  height: 20px;
+.skeleton.text {
+    width: 100%;
+    margin-top: 10px;
+    height: 20px;
 }
 .skeleton.text.large {
-  margin-top: 10px;
-  
-  height: 24px;
-  width: 70%;
+    margin-top: 10px;
+
+    height: 24px;
+    width: 70%;
 }
 
 .skeleton.text.medium {
-  height: 20px;
-  width: 50%;
+    height: 20px;
+    width: 50%;
 }
 
 .skeleton.text.small {
-  height: 16px;
-  width: 30%;
+    height: 16px;
+    width: 30%;
 }

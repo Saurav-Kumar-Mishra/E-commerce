@@ -9,7 +9,6 @@ import {
     fetchProductsByCategories,
     fetchProducts,
 } from '../Redux/Slices/ProductSlice'
-// import { SelectAllProducts } from '../Redux/Slices/ProductSlice'
 
 function Filter() {
     const [showCategoriesItems, setShowCategoriesItems] = useState(false)
@@ -43,7 +42,6 @@ function Filter() {
             }
         })
     }
-
 
     return (
         <section>

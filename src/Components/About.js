@@ -14,13 +14,13 @@ const About = () => {
             </p>
             <p>
                 Founded in 2024 by Saurav Kumar Mishra, OneStopShop has come a
-                long way from its beginnings in a home office. When Saurav
-                Kumar Mishra first started out, their passion for [passion,
-                e.g., eco-friendly products, providing the best equipment for
-                their fellow musicians] drove them to do tons of
-                research, quit their day job, and gave them the impetus to turn
-                hard work and inspiration into a booming online store. We now
-                serve customers all over India, and are thrilled to be a part of the fair trade wing of the E-commerce industry.
+                long way from its beginnings in a home office. When Saurav Kumar
+                Mishra first started out, his passion for providing high-quality
+                and innovative products drove him to do extensive research, quit
+                his day job, and turn hard work and inspiration into a booming
+                online store. We now serve customers all over India and are
+                thrilled to be a part of the fair trade wing of the E-commerce
+                industry.
             </p>
             <p>
                 We hope you enjoy our products as much as we enjoy offering them

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './EmptyCart.css'; // Import the CSS file
+import React from 'react'
+import { Link } from 'react-router-dom'
+import './EmptyCart.css' // Import the CSS file
 
 function EmptyCart() {
     return (
@@ -12,7 +12,7 @@ function EmptyCart() {
                 </Link>
             </div>
         </div>
-    );
+    )
 }
 
-export default EmptyCart;
+export default EmptyCart

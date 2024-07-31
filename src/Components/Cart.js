@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import {
     removeFromCart,
     selectCartItems,
-    TotalAmount
+    TotalAmount,
 } from '../Redux/Slices/CartSlice'
 import { addToCart } from '../Redux/Slices/CartSlice'
 import './Cart.css'
@@ -23,7 +23,7 @@ const Cart = () => {
         <div className="cart-page-container">
             <div className="product-details-container">
                 {cartItems.length > 0 ? (
-                    cartItems.map((item,index) => (
+                    cartItems.map((item, index) => (
                         <div
                             key={item.product.id}
                             className="product-detail-card"
@@ -54,7 +54,10 @@ const Cart = () => {
                                         <option value="4">4</option>
                                     </select>
                                 </div>
-                                <p>item no: <span className='item-no'>{index+1}</span></p>
+                                <p>
+                                    item no:{' '}
+                                    <span className="item-no">{index + 1}</span>
+                                </p>
                                 <button
                                     onClick={() =>
                                         handleRemove(item.product.id)
@@ -74,7 +77,7 @@ const Cart = () => {
                 <h2>Cart Summary</h2>
                 <hr />
                 <div className="summary-details">
-                <table>
+                    <table>
                         <thead>
                             <tr>
                                 <th>Item No</th>
@@ -87,12 +90,17 @@ const Cart = () => {
                                 <tr key={item.product.id}>
                                     <td>{index + 1}</td>
                                     <td>{item.quantity}</td>
-                                    <td>${(item.product.price * item.quantity).toFixed(2)}</td>
+                                    <td>
+                                        $
+                                        {(
+                                            item.product.price * item.quantity
+                                        ).toFixed(2)}
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
-                    <hr/>
+                    <hr />
                     <p>Total Items: {cartItems.length}</p>
                     <p>Total Amount: ${Total_Amount.toFixed(2)}</p>
                 </div>

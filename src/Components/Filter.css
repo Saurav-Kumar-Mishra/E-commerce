@@ -51,8 +51,8 @@ hr {
     color: grey;
     margin-bottom: 10px;
 }
-.arrow{
-  cursor: pointer;
+.arrow {
+    cursor: pointer;
 }
 .category-items {
     display: flex;

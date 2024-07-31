@@ -12,10 +12,19 @@ function ProductDetailSkeleton() {
                 <SkeletonElement type="text" className="skeleton text large" />
                 <hr />
                 <div className="discounted-container">
-                    <SkeletonElement type="text" className="skeleton text medium" />
+                    <SkeletonElement
+                        type="text"
+                        className="skeleton text medium"
+                    />
                     <div className="discounted-price-container">
-                        <SkeletonElement type="text" className="skeleton text medium" />
-                        <SkeletonElement type="text" className="skeleton text medium" />
+                        <SkeletonElement
+                            type="text"
+                            className="skeleton text medium"
+                        />
+                        <SkeletonElement
+                            type="text"
+                            className="skeleton text medium"
+                        />
                     </div>
                 </div>
                 <SkeletonElement type="text" className="skeleton text medium" />

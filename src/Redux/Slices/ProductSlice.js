@@ -80,7 +80,7 @@ const productSlice = createSlice({
                 state.loading = false
                 const data = action.payload.map((product) => product.products)
                 state.products = data.flat()
-                state.currentPage=1;
+                state.currentPage = 1
             })
             .addCase(fetchProductsByCategories.rejected, (state, action) => {
                 state.loading = false

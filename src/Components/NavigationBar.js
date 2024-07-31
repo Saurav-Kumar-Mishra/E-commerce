@@ -28,7 +28,7 @@ function NavigationBar() {
 
             <ul className="nav-links">
                 <li className="hideOnMobile">
-                    <Link to="/home">HOME</Link>
+                    <Link to="/">HOME</Link>
                 </li>
                 <li className="hideOnMobile">
                     <Link to="/about">ABOUT</Link>
@@ -75,7 +75,7 @@ function NavigationBar() {
                     </svg>
                 </li>
                 <li onClick={handleSidebar}>
-                    <Link to="/home">HOME</Link>
+                    <Link to="/">HOME</Link>
                 </li>
                 <li onClick={handleSidebar}>
                     <Link to="/about">ABOUT</Link>
