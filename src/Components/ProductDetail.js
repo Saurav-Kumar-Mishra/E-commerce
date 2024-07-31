@@ -7,17 +7,22 @@ import {
     SelectSingleProduct,
 } from '../Redux/Slices/ProductSlice'
 import { addToCart } from '../Redux/Slices/CartSlice'
-import { toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import { toast } from 'react-toastify'       // Library for displaying notifications
+import 'react-toastify/dist/ReactToastify.css'  // importing css for toast notification 
 import ProductDetailSkeleton from './Skeleton/ProductDetailSkeleton'
+
 const ProductDetail = () => {
+    
     const [quantity, setQuantity] = useState({
         qty: 1,
-    })
+    })  // state to control the quantity 
+
+    // set the quantity of items to be added into cart
     function handleQuantity(qty) {
         setQuantity({ qty })
     }
 
+    // handle adding the items to cart
     function handleAddToCart() {
         if (product) {
             dispatch(addToCart({ product, quantity: quantity.qty }))
@@ -53,14 +58,14 @@ const ProductDetail = () => {
                 {product.popular && <span className="popular">Popular</span>}
                 <div className="discounted-container">
                     <p className="discount">
-                        -{product.discount ? product.discount : 0}%
+                        {product.discount && `-${product.discount}%` }
                     </p>
                     <div className="discounted-price-container">
                         <p className="currency">$</p>
-                        <p className="discounted-price">
+                        <p className="discounted-price">    {/* Calculate the discounted price*/}
                             {(
                                 product.price -
-                                (product.discount / 100) * product.price
+                                ((product.discount ? product.discount : 0 ) / 100) * product.price
                             ).toFixed(2)}
                         </p>
                     </div>

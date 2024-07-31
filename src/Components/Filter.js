@@ -11,20 +11,24 @@ import {
 } from '../Redux/Slices/ProductSlice'
 
 function Filter() {
-    const [showCategoriesItems, setShowCategoriesItems] = useState(false)
-    const [selectedCategories, setSelectedCategories] = useState([])
+    const [showCategoriesItems, setShowCategoriesItems] = useState(false)   // State to control visibility of categories
+    const [selectedCategories, setSelectedCategories] = useState([])     // State to keep track of selected categories
     const dispatch = useDispatch()
     const categories = useSelector(selectAllCategories)
+
+    // Fetch categories when the component mounts
     React.useEffect(() => {
         dispatch(fetchCategories())
     }, [dispatch])
 
+    // Toggle the visibility of category items
     function handleCategories() {
         setShowCategoriesItems((prev) => {
             return !prev
         })
     }
 
+     // Fetch products based on selected categories
     React.useEffect(() => {
         if (selectedCategories.length > 0) {
             dispatch(fetchProductsByCategories(selectedCategories))
@@ -32,7 +36,8 @@ function Filter() {
             dispatch(fetchProducts())
         }
     }, [selectedCategories, dispatch])
-
+    
+    // Handle category checkbox change
     function handleCategoryChange(category) {
         setSelectedCategories((prevSelectedCategories) => {
             if (prevSelectedCategories.includes(category)) {

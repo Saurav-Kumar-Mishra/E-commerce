@@ -1,20 +1,25 @@
 import React, { useRef } from 'react'
 import { GrSend } from 'react-icons/gr'
-import { toast, ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-import emailjs from '@emailjs/browser'
+import { toast, ToastContainer } from 'react-toastify'    // Library for displaying notifications
+import 'react-toastify/dist/ReactToastify.css'            // importing css for toast notification      
+import emailjs from '@emailjs/browser'                    // Library for sending emails
 import './Contact.css'
 
 const Contact = () => {
     const form = useRef()
     const sendEmail = (e) => {
         e.preventDefault()
+
+        // Sends an email using the EmailJS service
         emailjs
             .sendForm(
-                process.env.REACT_APP_service_id,
-                process.env.REACT_APP_template_id,
+                process.env
+                    .REACT_APP_service_id,               // Bringing the values form .env file /
+                process.env
+                    .REACT_APP_template_id,              // Bringing the values form .env file //
                 form.current,
-                process.env.REACT_APP_public_key
+                process.env
+                    .REACT_APP_public_key                // Bringing the values form .env file //
             )
             .then(
                 () => {
@@ -25,7 +30,7 @@ const Contact = () => {
                 }
             )
 
-        form.current.reset()
+        form.current.reset()   // Reset the form after sending the email
     }
 
     return (

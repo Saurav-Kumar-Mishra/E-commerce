@@ -8,13 +8,18 @@ import {
 import { addToCart } from '../Redux/Slices/CartSlice'
 import './Cart.css'
 import EmptyCart from './EmptyCart'
+
 const Cart = () => {
     const dispatch = useDispatch()
     const cartItems = useSelector(selectCartItems)
     const Total_Amount = useSelector(TotalAmount)
+
+    // Handles removing an item from the cart
     const handleRemove = (id) => {
         dispatch(removeFromCart(id))
     }
+
+    // Handles changing the quantity of an item in the cart
     function handleQuantity(qty, item) {
         dispatch(addToCart({ product: item.product, quantity: qty }))
     }

@@ -12,7 +12,9 @@ import Filter from './Filter'
 import { Link } from 'react-router-dom'
 import SkeletonElement from './Skeleton/SkeletonElement'
 import ProductCardSkeleton from './Skeleton/ProductCardSkeleton'
+
 function Home() {
+
     const dispatch = useDispatch()
     const products = useSelector(SelectAllProducts)
     const productsPerPage = useSelector(
@@ -22,21 +24,29 @@ function Home() {
     React.useEffect(() => {
         dispatch(fetchProducts())
     }, [dispatch])
+
     const error = useSelector((state) => state.products.error)
     const loading = useSelector((state) => state.products.loading)
 
+    // logic for pagination
     const currentPage = useSelector((state) => state.products.currentPage)
     const totalPages = Math.ceil(products.length / productsPerPage)
     const pages = [...Array(totalPages + 1).keys()].slice(1)
     const lastPageIndex = currentPage * productsPerPage
     const firstPageIndex = lastPageIndex - productsPerPage
     const visibleProducts = products.slice(firstPageIndex, lastPageIndex)
+
+    // handle displaying next page items
     function handleNextPage() {
         if (currentPage < totalPages) dispatch(nextPage())
     }
+
+    // handle displaying previous page items
     function handlePrevPage() {
         if (currentPage > 1) dispatch(prevPage())
     }
+
+    // set current page
     function handlePages(e) {
         dispatch(setCurrentPge(Number(e.target.innerText)))
     }

@@ -2,11 +2,12 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 
 const initialState = {
-    categories: [],
+    categories: [], // Array to hold all product categories
     loading: false,
     error: null,
 }
 
+// Async thunk to fetch all categories
 export const fetchCategories = createAsyncThunk(
     'categories/fetchCategories',
     async () => {
@@ -17,11 +18,13 @@ export const fetchCategories = createAsyncThunk(
     }
 )
 
+// Create slice for categories
 const categorySlice = createSlice({
     name: 'categories',
     initialState,
     reducers: {},
     extraReducers: (builder) => {
+        // Handle different states of fetchCategories async thunk
         builder
             .addCase(fetchCategories.pending, (state) => {
                 state.loading = true

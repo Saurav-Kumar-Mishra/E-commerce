@@ -1,14 +1,15 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 const initialState = {
-    products: [],
-    singleProduct: null,
+    products: [], // Array to hold all product
+    singleProduct: null,  // Object to hold a single product's details
     loading: false,
     error: null,
     productsPerPage: 12,
     currentPage: 1,
 }
 
+// Async thunk to fetch all products
 export const fetchProducts = createAsyncThunk(
     'products/fetchProducts',
     async () => {
@@ -19,6 +20,7 @@ export const fetchProducts = createAsyncThunk(
     }
 )
 
+// Async thunk to fetch a single product by ID
 export const fetchProductsByCategories = createAsyncThunk(
     'products/fetchProductsByCategories',
     async (selectedCategories) => {
@@ -33,6 +35,7 @@ export const fetchProductsByCategories = createAsyncThunk(
     }
 )
 
+// Async thunk to fetch a single product by ID
 export const fetchSingleProduct = createAsyncThunk(
     'products/fetchSingleProduct',
     async (productId) => {
@@ -43,21 +46,26 @@ export const fetchSingleProduct = createAsyncThunk(
     }
 )
 
+// Create slice for products
 const productSlice = createSlice({
     name: 'products',
     initialState: initialState,
     reducers: {
+        // Action to go to the next page
         nextPage: (state) => {
             state.currentPage += 1
         },
+        // Action to go to the previous page
         prevPage: (state) => {
             state.currentPage -= 1
         },
+        // Action to set the current page
         setCurrentPge: (state, action) => {
             state.currentPage = action.payload
         },
     },
     extraReducers: (builder) => {
+        // Handle different states of fetchProducts async thunk
         builder
             .addCase(fetchProducts.pending, (state) => {
                 state.loading = true
@@ -71,6 +79,7 @@ const productSlice = createSlice({
                 state.loading = false
                 state.error = action.error.message
             })
+            // Handle different states of fetchProductsByCategories async thunk
         builder
             .addCase(fetchProductsByCategories.pending, (state) => {
                 state.loading = true
@@ -86,6 +95,7 @@ const productSlice = createSlice({
                 state.loading = false
                 state.error = action.error.message
             })
+            // Handle different states of fetchSingleProduct async thunk
         builder
             .addCase(fetchSingleProduct.pending, (state) => {
                 state.loading = true
