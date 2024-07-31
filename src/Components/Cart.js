@@ -11,7 +11,6 @@ import EmptyCart from './EmptyCart'
 const Cart = () => {
     const dispatch = useDispatch()
     const cartItems = useSelector(selectCartItems)
-    console.log(cartItems);
     const Total_Amount = useSelector(TotalAmount)
     const handleRemove = (id) => {
         dispatch(removeFromCart(id))

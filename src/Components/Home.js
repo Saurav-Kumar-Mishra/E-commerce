@@ -22,7 +22,7 @@ function Home() {
     React.useEffect(() => {
         dispatch(fetchProducts())
     }, [dispatch])
-    const error = useSelector((state) => state.products.error)
+    // const error = useSelector((state) => state.products.error)
     const loading = useSelector((state) => state.products.loading)
 
     const currentPage = useSelector((state) => state.products.currentPage)
@@ -51,7 +51,7 @@ function Home() {
     return (
         <div className="container">
             {/* {loading ? <SkeletonElement type="card" /> : <Filter />} */}
-            <Filter/>
+            <Filter />
             <div className="product-page-container">
                 {loading ? (
                     <SkeletonElement type="text" />

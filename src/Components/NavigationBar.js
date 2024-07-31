@@ -28,11 +28,14 @@ function NavigationBar() {
 
             <ul className="nav-links">
                 <li className="hideOnMobile">
-                    <a href="#">HOME</a>
+                    <Link to="/home">HOME</Link>
                 </li>
-                <li className="hideOnMobile">SHOP</li>
-                <li className="hideOnMobile">ABOUT</li>
-                <li className="hideOnMobile">CONTACT</li>
+                <li className="hideOnMobile">
+                    <Link to="/about">ABOUT</Link>
+                </li>
+                <li className="hideOnMobile">
+                    <Link to="/contact">CONTACT</Link>
+                </li>
                 <div className="shop-cart">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -71,12 +74,15 @@ function NavigationBar() {
                         <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                     </svg>
                 </li>
-                <li>
-                    <a href="#">HOME</a>
+                <li onClick={handleSidebar}>
+                    <Link to="/home">HOME</Link>
                 </li>
-                <li>SHOP</li>
-                <li>ABOUT</li>
-                <li>CONTACT</li>
+                <li onClick={handleSidebar}>
+                    <Link to="/about">ABOUT</Link>
+                </li>
+                <li onClick={handleSidebar}>
+                    <Link to="/contact">CONTACT</Link>
+                </li>
             </ul>
         </nav>
     )
