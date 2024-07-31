@@ -1,0 +1,49 @@
+.skeleton {
+    background: #ddd;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+.skeleton.card {
+    width: 250px;
+    height: 500px;
+}
+.skeleton.title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+        sans-serif;
+    width: 100%;
+    height: 20px;
+}
+.skeleton.image {
+    margin-top: 15px;
+    width: 100%;
+    border-radius: 8px;
+    height: 200px;
+}
+.skeleton.button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 2px;
+    height: 10px;
+    border-radius: 9999px;
+}
+.skeleton.text{
+  width: 100%;
+  margin-top: 10px;
+  height: 20px;
+}
+.skeleton.text.large {
+  margin-top: 10px;
+  
+  height: 24px;
+  width: 70%;
+}
+
+.skeleton.text.medium {
+  height: 20px;
+  width: 50%;
+}
+
+.skeleton.text.small {
+  height: 16px;
+  width: 30%;
+}

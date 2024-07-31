@@ -1,0 +1,120 @@
+
+nav {
+    display: flex;
+    width: 100%;
+    background-color: black;
+    padding: 6px 32px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 2px 0px 5px;
+    color: white;
+}
+
+.nav-links {
+    color: white;
+    display: flex;
+}
+
+.nav-links li {
+    list-style-type: none;
+    padding: 5px;
+    margin-right: 25px;
+    transition: all 0.3s ease;
+    padding: 10px 0px;
+    cursor: pointer;
+    margin-left: 10px;
+    color: white;
+}
+
+ .nav-links a{
+    text-decoration: none;
+    color:white
+ }
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.nav-logo p {
+    color: white;
+    font-size: 22px;
+    line-height: 32px;
+    font-family: sans-serif;
+    font-weight: 900;
+}
+
+.nav-links li:hover {
+    color: black;
+    background-color: rgb(214, 250, 250);
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-color: skyblue;
+    text-decoration-thickness: 2px;
+}
+
+.shop-cart{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+}
+.total-items-count{
+    display: inline;
+    position: absolute;
+    top: 2px;
+    right: 50%;
+    color: red;
+    font-weight: 600;
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(236, 235, 235, 0.5);
+    color: black; 
+    backdrop-filter: blur(5px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    justify-content: flex-start;
+    padding: 10px;
+}
+.sidebar li{
+    list-style-type: none;
+}
+.sidebar a{
+    color: black;
+    text-decoration: none;
+}
+#login-btn {
+    background-color: blue;
+    margin-left: 20px;
+    cursor: pointer;
+    border-radius: 9999px;
+    color: white;
+    padding: 5px 20px;
+    margin-right: 20px;
+}
+
+.showMenu {
+    display: none;
+}
+
+@media (max-width: 960px) {
+    .hideOnMobile {
+        display: none;
+    }
+    .nav-logo p {
+        font-size: 18px;
+    }
+    .showMenu {
+        display: inline;
+    }
+}
