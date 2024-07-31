@@ -6,11 +6,10 @@ import {
     fetchSingleProduct,
     SelectSingleProduct,
 } from '../Redux/Slices/ProductSlice'
-import Spinner from './Spinner'
 import { addToCart } from '../Redux/Slices/CartSlice'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import ProductDetailSkeleton from './ProductDetailSkeleton'
+import ProductDetailSkeleton from './Skeleton/ProductDetailSkeleton'
 const ProductDetail = () => {
     const [quantity, setQuantity] = useState({
         qty: 1,
@@ -40,7 +39,7 @@ const ProductDetail = () => {
         dispatch(fetchSingleProduct(id))
     }, [dispatch, id])
 
-    if (loading) return <ProductDetailSkeleton/>
+    if (loading) return <ProductDetailSkeleton />
     if (error) return <div>Error: {error}</div>
     if (!product) return <div>No product found</div>
     return (

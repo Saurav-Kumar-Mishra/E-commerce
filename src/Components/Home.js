@@ -10,9 +10,8 @@ import {
 import './Home.css'
 import Filter from './Filter'
 import { Link } from 'react-router-dom'
-import Spinner from './Spinner'
-import SkeletonElement from './SkeletonElement'
-import ProductCardSkeleton from './ProductCardSkeleton'
+import SkeletonElement from './Skeleton/SkeletonElement'
+import ProductCardSkeleton from './Skeleton/ProductCardSkeleton'
 function Home() {
     const dispatch = useDispatch()
     const products = useSelector(SelectAllProducts)

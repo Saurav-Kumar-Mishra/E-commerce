@@ -1,6 +1,6 @@
 import React from 'react'
 import SkeletonElement from './SkeletonElement'
-import './ProductDetail.css'
+import './ProductDetailSkeleton.css'
 
 function ProductDetailSkeleton() {
     return (
