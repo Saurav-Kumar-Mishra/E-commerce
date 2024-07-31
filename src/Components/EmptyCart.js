@@ -7,7 +7,7 @@ function EmptyCart() {
         <div className="empty-cart-container">
             <div className="empty-cart-content">
                 <p className="message">Your Cart is Empty!</p>
-                <Link to="/home" className="shop-now-button">
+                <Link to="/" className="shop-now-button">
                     Shop Now
                 </Link>
             </div>
